@@ -47,6 +47,11 @@ class HelloControllerSpec extends SpringApplicationSpec {
         mvcResult.contentType.contains('application/json')
         expect json, hasJsonPath('\$.message', is(resultName))
 
+        expect:
+
+        cleanup:
+        // N/A
+
         where:
         name     | resultName
         'horiga' | 'Hello, horiga'

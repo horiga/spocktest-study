@@ -107,3 +107,5 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+# gradle
+build/
