@@ -3,6 +3,7 @@ package org.horiga.study.spocktest
 import org.mockito.internal.util.reflection.Whitebox
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.web.servlet.MockMvc
+import spock.lang.Ignore
 
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
@@ -54,7 +55,34 @@ class HelloControllerSpec extends SpringApplicationSpec {
 
         where:
         name     | resultName
-        'horiga' | 'Hello, horiga'
-        'duke'   | 'Hello, duke'
+        'horiga' | 'Jamboree, horiga'
+        'duke'   | 'Jamboree, duke'
+    }
+
+    @Ignore
+    def "banned word test"() {
+        setup:
+        def res = mockMvc.perform(get("/hello?name=shit")).andReturn().response
+
+        when:
+        def json = res.contentAsString
+        println json
+
+        then:
+        res.status == INTERNAL_SERVER_ERROR.value()
+        res.contentType.contains('application/json')
+        expect json, hasJsonPath('\$.error')
+    }
+
+    def "not found error"() {
+        setup:
+        def res = mockMvc.perform(get("/unknown")).andReturn().response
+
+        when:
+        def json = "json >> " + res.contentAsString
+        println json
+
+        then:
+        res.status == NOT_FOUND.value()
     }
 }

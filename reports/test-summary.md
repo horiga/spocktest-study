@@ -2,18 +2,18 @@
 
 ## Specifications summary
 
-<small>Created on Fri Jul 15 21:05:45 JST 2016 by jp10762</small>
+<small>Created on Mon Jul 18 01:31:40 JST 2016 by horiga</small>
 
 | Total          | Passed          | Failed          | Feature failures | Feature errors   | Success rate        | Total time (ms) |
 |----------------|-----------------|-----------------|------------------|------------------|---------------------|-----------------|
-| 2 | 2 | 0 | 0  | 0 | 1.0| 1733.0   |
+| 2 | 2 | 0 | 0  | 0 | 1.0| 1744.0   |
 
 ## Specifications
 
 
 |Name  | Features | Failed | Errors | Skipped | Success rate | Time |
 |------|----------|--------|--------|---------|--------------|------|
-| org.horiga.study.spocktest.HelloControllerSpec | 1 | 0 | 0 | 0 | 1.0 | 1733 |
+| org.horiga.study.spocktest.HelloControllerSpec | 1 | 0 | 0 | 1 | 1.0 | 1744 |
 | org.horiga.study.spocktest.SpringApplicationSpec | 0 | 0 | 0 | 0 | 1.0 | 0 |
 
 

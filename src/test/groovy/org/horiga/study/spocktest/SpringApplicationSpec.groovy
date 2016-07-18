@@ -6,6 +6,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import spock.lang.Specification;
 
+@ActiveProfiles("test")
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 public class SpringApplicationSpec extends Specification {
